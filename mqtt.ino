@@ -52,17 +52,17 @@ void loop() {
     myIP = getlocalIP();
     Serial.println("My IP is " + myIP.toString());
 
-    if (mqttClient.connect("painlessMeshClient")) {
+    if (mqttClient.connect("ESP32Mesh")) {
       Serial.print("MQTT Broker connect Success\n");
-      mqttClient.publish("painlessMesh/from/gateway","Ready!");
-      mqttClient.subscribe("painlessMesh/to/#");
+      mqttClient.publish("gym/data","Ready!");
+      mqttClient.subscribe("gym/data");
     } 
   }
 }
 
 void receivedCallback( const uint32_t &from, const String &msg ) {
   Serial.printf("bridge: Received from %u msg=%s\n", from, msg.c_str());
-  String topic = "painlessMesh/from/" + String(from);
+  String topic = "gym/data" + String(from);
   mqttClient.publish(topic.c_str(), msg.c_str());
 }
 
@@ -83,7 +83,7 @@ void mqttCallback(char* topic, uint8_t* payload, unsigned int length) {
       String str;
       for (auto &&id : nodes)
         str += String(id) + String(" ");
-      mqttClient.publish("painlessMesh/from/gateway", str.c_str());
+      mqttClient.publish("gym/data", str.c_str());
     }
   }
   else if(targetStr == "broadcast") 
@@ -99,8 +99,8 @@ void mqttCallback(char* topic, uint8_t* payload, unsigned int length) {
     }
     else
     {
-     mqttClient.publish("painlessMesh/from/gateway", "Client not connected!");
-     Serial.print("MQTT Broker Connect Failed\n");
+     mqttClient.publish("gym/data", "Client not connected!");
+     Serial.print("SEND TO Broker");
     }
   }
 }
