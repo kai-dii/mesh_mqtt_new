@@ -14,10 +14,10 @@
 
 #define CHECKCONNDELTA 60   // check interval ( seconds ) for mqtt connection
 
-const char *mqttUser="Gym_mqtt";
-const char *mqttPassword="!zxc123zxc";
+const char *mqttUser="MQTT_USER";
+const char *mqttPassword="MQTT_PASSWORD";
 const int mqttPort=1883;
-const char *mqttServer="61.58.248.108";
+const char *mqttServer="MQTT_HOST";
 
 
 bool calc_delay = false;
