@@ -3,8 +3,8 @@
 #include <PubSubClient.h>
 #include <WiFiClient.h>
 
-#define   MESH_PREFIX     "gym_nfu"
-#define   MESH_PASSWORD   "gym_nfu123456"
+#define   MESH_PREFIX     "YOUR_MESH_SSID"
+#define   MESH_PASSWORD   "YOUR_MESH_PASSWORD"
 #define   MESH_PORT       5555
 #define SENDTOPIC "gym/data"
 
