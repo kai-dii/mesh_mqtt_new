@@ -9,8 +9,8 @@
 #define SENDTOPIC "gym/data"
 
 
-#define   STATION_SSID     "ken-1F"
-#define   STATION_PASSWORD "zxc123zxc"
+#define   STATION_SSID     "YOUR_WIFI_SSID"
+#define   STATION_PASSWORD "YOUR_WIFI_PASSWORD"
 
 #define CHECKCONNDELTA 60   // check interval ( seconds ) for mqtt connection
 
